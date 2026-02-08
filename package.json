@@ -1,0 +1,26 @@
+{
+  "name": "aegis-shield",
+  "version": "0.1.0",
+  "description": "Prompt injection detection and defense for AI agents",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "aegis-shield": "dist/cli.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "scan": "tsx src/cli.ts"
+  },
+  "keywords": ["prompt-injection", "ai-security", "agent-safety", "llm-security"],
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.0",
+    "tsx": "^4.7.0"
+  }
+}
