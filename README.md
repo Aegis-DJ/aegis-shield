@@ -507,16 +507,7 @@ Found a new prompt injection technique? Add it to our pattern database:
 
 ---
 
-## 🔒 Security
-
-### Responsible Disclosure
-
-Found a security vulnerability? Please report it responsibly:
-
-- **Email**: security@aegis-shield.com
-- **Response Time**: 24-48 hours
-
-### Security Considerations
+## 🔒 Considerations
 
 - **Pattern Evasion**: Attackers may develop new techniques
 - **False Positives**: Legitimate content may trigger patterns
