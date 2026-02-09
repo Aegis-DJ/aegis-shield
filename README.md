@@ -3,8 +3,6 @@
 **Prompt Injection Detection & Defense for AI Agents**
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/aegis-shield.svg)](https://www.npmjs.com/package/aegis-shield)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/Aegis-DJ/aegis-shield/test.yml)](https://github.com/Aegis-DJ/aegis-shield/actions)
 
 > **3ms prompt injection scanner with 24+ battle-tested patterns**  
 > Stop prompt injection attacks before they reach your AI agents.
@@ -220,7 +218,6 @@ aegis-shield/
 │   ├── patterns/         # Injection pattern database  
 │   ├── utils/           # Utilities and helpers
 │   └── cli.ts           # Command-line interface
-├── api/                 # Hosted API server
 ├── tests/              # Test suite
 └── dist/               # Compiled output
 ```
@@ -253,36 +250,6 @@ interface Match {
 - 📈 **Linear scaling** with input size
 - 💾 **Zero external dependencies** in core scanner
 - 🔄 **Stateless design** for horizontal scaling
-
----
-
-## 📡 Hosted API (Coming Soon)
-
-For production deployments, use our hosted scanning API:
-
-```bash
-# Single endpoint scanning
-curl -X POST https://api.aegis-shield.com/v1/scan \
-  -H "Authorization: Bearer YOUR_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "prompt": "user input to scan",
-    "options": {
-      "confidence": "high",
-      "patterns": ["all"]
-    }
-  }'
-```
-
-### Pricing Tiers
-
-| Plan | Price | Scans/Month | SLA | Features |
-|------|-------|-------------|-----|----------|
-| **Free** | $0 | 1,000 | - | CLI + basic API |
-| **Pro** | $29/mo | 50,000 | 3ms | Webhooks + dashboard |
-| **Enterprise** | $299/mo | 1M+ | <50ms | SSO + compliance |
-
-**[Sign up for hosted API beta →](https://aegis-shield.com)**
 
 ---
 
@@ -330,10 +297,6 @@ const result = scan(input, {
 AEGIS_SHIELD_CONFIG_PATH=/path/to/config.json
 AEGIS_SHIELD_DEFAULT_SEVERITY=medium
 AEGIS_SHIELD_JSON_OUTPUT=true
-
-# API configuration (for hosted service)
-AEGIS_SHIELD_API_KEY=your_api_key
-AEGIS_SHIELD_ENDPOINT=https://api.aegis-shield.com
 ```
 
 ---
@@ -496,9 +459,6 @@ npm run build
 
 # Run CLI locally
 npm run scan -- --text "test input"
-
-# Start API server (development)
-npm run api
 ```
 
 ---
@@ -518,7 +478,7 @@ Found a new prompt injection technique? Add it to our pattern database:
 
 ### 2. Code Contributions
 
-1. Check [Issues](https://github.com/Aegis-DJ/aegis-shield/issues) for open tasks
+1. Check Issues for open tasks
 2. Fork and create feature branch
 3. Make changes with tests
 4. Submit pull request
@@ -527,7 +487,6 @@ Found a new prompt injection technique? Add it to our pattern database:
 
 - Fix typos or improve clarity
 - Add usage examples
-- Translate documentation
 - Create tutorials
 
 ### Development Guidelines
@@ -541,21 +500,10 @@ Found a new prompt injection technique? Add it to our pattern database:
 
 ## 📚 Resources
 
-### Documentation
-- [API Reference](https://docs.aegis-shield.com/api)
-- [Pattern Guide](https://docs.aegis-shield.com/patterns)
-- [Integration Examples](https://docs.aegis-shield.com/examples)
-- [Security Best Practices](https://docs.aegis-shield.com/security)
-
-### Community
-- [GitHub Discussions](https://github.com/Aegis-DJ/aegis-shield/discussions)
-- [Discord Server](https://discord.gg/aegis-shield)
-- [Twitter Updates](https://twitter.com/aegisshield)
-
 ### Security Research
-- [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-- [Prompt Injection Papers](https://github.com/Aegis-DJ/awesome-prompt-injection)
-- [AI Safety Resources](https://aisafety.com/)
+- OWASP LLM Top 10
+- Academic papers on prompt injection
+- AI safety research
 
 ---
 
@@ -566,7 +514,6 @@ Found a new prompt injection technique? Add it to our pattern database:
 Found a security vulnerability? Please report it responsibly:
 
 - **Email**: security@aegis-shield.com
-- **GPG Key**: [Download public key](https://aegis-shield.com/security.asc)
 - **Response Time**: 24-48 hours
 
 ### Security Considerations
@@ -584,7 +531,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ### Commercial Use
 
-The core scanner is MIT licensed and free for any use. The hosted API requires a subscription for production use.
+The core scanner is MIT licensed and free for any use.
 
 ---
 
@@ -609,18 +556,14 @@ The core scanner is MIT licensed and free for any use. The hosted API requires a
 - [ ] Custom rule engine
 - [ ] Audit logging
 - [ ] Compliance reporting
-- [ ] Multi-tenant dashboards
 
 ### v1.0.0 - Production Ready
-- [ ] 99.9% SLA hosted API
 - [ ] Advanced analytics
 - [ ] Webhook integrations
-- [ ] Enterprise SSO
+- [ ] Performance optimizations
 
 ---
 
 **Made with ❤️ by the Aegis team**
 
 *Protecting AI agents from prompt injection attacks, one scan at a time.*
-
-[⭐ Star on GitHub](https://github.com/Aegis-DJ/aegis-shield) | [📖 Read the Docs](https://docs.aegis-shield.com) | [🚀 Try the API](https://aegis-shield.com)
